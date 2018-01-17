@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){	  
+	$(".flip").on("click",function(e) {
+		
+		var target =$(this).attr("href");
+		$(target).slideToggle("fast");
+	    $(".panel").not(target).hide();
+		e.preventDefault();
+	});
+});
+</script>
+
+	<title>EzBike</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+		<nav class="w3-bar w3-black">
+        <a class="flip" href="#updatebike" class = "w3-button w3-bar-item">Update Bike</a> 
+        <a class="flip" href="#topup" class = "w3-button w3-bar-item ">Top up</a>
+        <a class="flip" href="#viewreport" class = "w3-button w3-bar-item ">View Report</a> 
+        <a class="flip" href="#viewrent" class = "w3-button w3-bar-item ">View Student's Rental History</a> 
+		</nav>
+	
+	   <div class="panel" id="updatebike" >
+		<div class ="w3-container w3-teal" style="margin-top:40px">
+			<h2>Add Bike</h2>
+		</div>
+		<form method="post" action="updateBike.php">
+			<div class="w3-container">
+				<label class="w3-text-blue"><b>Bicycle Type</b></label>
+				<input class="w3-input w3-border" type="text" name="bicycle_type">
+				<label class="w3-text-blue"><b>Station ID</b></label>
+				<input class="w3-input w3-border" type="number" name="station_id">
+
+				<!--<button class="w3-button w3-blue">Delete</button> -->
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+		
+		
+		<div class ="w3-container w3-teal" style="margin-top:40px">
+			<h2>Delete Bike</h2>
+		</div>
+		<form method="post" action="deleteBike.php">
+			<div class="w3-container">
+				<label class="w3-text-blue"><b>Bicycle ID</b></label>
+				<input class="w3-input w3-border" type="number" name ="bicycle_id">
+				
+				<!--<button class="w3-button w3-blue">Delete</button> -->
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	  </div>
+		
+	
+	 
+	   <div class="panel" id="topup" style="display:none">
+	   
+	   <form method="post" action="topup.php">
+			<div class="w3-container">
+			<label class="w3-text-blue"><b>Student ID</b></label>
+			<input class="w3-input w3-border" type="number" name="user_id">
+			<label class="w3-text-blue"><b>Topup Amount</b></label>
+			<input class="w3-input w3-border" type="decimal" name="topup_amount">
+			
+			<!--<button class="w3-button w3-blue">Delete</button> -->
+				<input type="submit" value="Submit">
+			</div>
+		</form>
+	  </div>
+	  
+	  
+	  
+	  <div class="panel" id="viewreport" style="display:none">
+	  <form method="post" action="viewReport.php">
+			<div class="w3-container">
+			<label class="w3-text-blue"><b>Student ID</b></label>
+			<input class="w3-input w3-border" type="number">
+			<label class="w3-text-blue"><b>Topup Amount</b></label>
+			<input class="w3-input w3-border" type="decimal">
+			
+			<button class="w3-button w3-blue">Top up</button>
+			</div>
+		</form>
+	  </div>
+	  
+	  
+	  <div class="panel" id="viewrent" style="display:none">
+	  <form method="post" action="viewRental.php">
+		<div class="w3-container">
+			<label class="w3-text-blue"><b>Student ID</b></label>
+			<input class="w3-input w3-border" type="number">
+			<label class="w3-text-blue"><b>Topup Amount</b></label>
+			<input class="w3-input w3-border" type="decimal">
+			
+			<button class="w3-button w3-blue">Top up</button>
+		</div>
+	   </form>
+	  </div>
+	 
+	
+
+</body>
+</html>

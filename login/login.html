@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="login.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+
+<body>
+	<nav class="w3-bar w3-black">
+		<a onclick="document.getElementById('id02').style.display='block'" class="w3-button w3-bar-item">Sign Up</a>
+		<a onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-bar-item">Log in</a>
+	</nav>
+
+ 
+
+<!-- <h2>Modal Login Form</h2> -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="login.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+    </div>
+
+    <div class="container" >
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="username" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<!-- <h2>Modal Sign up Form</h2> -->
+<div id="id02" class="modal">
+ 
+  <form class="modal-content animate" action="signup.php" method="post"">
+  	<div class="imgcontainer">
+  		 <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span>
+  	</div>
+    <div class="container">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter username" name="username" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <label><b>Address</b></label>
+      <input type="text" placeholder="kajang,selangor" name="address" required>
+
+      <label><b>Handphone number</b></label>
+      <input type="text" placeholder="xxxxxxxxxxxx" name="hp_no" required>
+
+      <button type="submit">Sign up</button>
+
+
+      <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    </div>
+
+     <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+
+  </form>
+</div>
+
+				
+
+	
+	<!---slideshow -->
+	
+	<section style="left:50%">
+			<img class="mySlides" src="/page/image/biker4.jpg" style="margin-left:auto; margin-right:auto;">
+			<img class="mySlides" src="/page/image/biker3.jpg" style="margin-left:auto; margin-right:auto;>
+			<img class="mySlides" src="/page/image/biker2.jpg" style="margin-left:auto; margin-right:auto;">
+	</section>
+	
+	<!--Title -->
+	<section class = "w3-container w3-centre w3-content" style="max-width:600px">
+		<h2 class="w3-wide">EZ Bike</h2>
+		<p class="w3-opacity"><i>Make Life easier</i></p>
+		<p class="w3-justify">We have created a fictional band website. 
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+		eiusmod tempor incididunt ut labore et dolore magna aliqua.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+		nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+		reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+		nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+		sunt in culpa qui officia deserunt mollit anim id est laborum 
+		consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+		labore et dolore magna aliqua.</p>
+	</section>
+	
+	<!--Footer-->
+	<footer class ="w3-container w3-padding-64 w3-center w3-black w3-xlarge" style="width:100%">
+		<a href="#"><i class="fa fa-facebook-official"></i></a>
+		<a href="#"><i class="fa fa-pinterest-p"></i></a>
+		<a href="#"><i class="fa fa-twitter"></i></a>
+		<a href="#"><i class="fa fa-flickr"></i></a>
+		<a href="#"><i class="fa fa-linkedin"></i></a>
+		<p class="w3-medium">
+			Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+		</p>
+	</footer>
+	
+<script>
+// Automatic Slideshow - change image every 3 seconds
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+	
+	
+	
+
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<script>
+		$(document).ready(function(){	  
+			$(".flip").on("click",function(e) {
+		
+			var target =$(this).attr("href");
+			$(target).slideToggle("fast");
+			$(".panel").not(target).hide();
+			e.preventDefault();
+		});
+		});
+		</script>
+		
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		
+		<title>EzBike</title>
+
+	</head>
+	<body>
+		<nav class="w3-bar w3-black">
+			<a class="flip" href="#lodgeReport" class="w3-button w3-bar-item">lodgereport</a>
+			<a class="flip" href="#unlockBike" class="w3-button w3-bar-item">unlockbike</a>
+			<a class="flip" href="#lockBike" class="w3-button w3-bar-item">lockbike</a>
+			<a class="flip" href="#topup" class="w3-button w3-bar-item">topup</a>
+			<a class="flip" href="#setting" class="w3-button w3-bar-item">setting</a>
+		</nav>
+		
+		
+		<!--- lodge report -->
+		<div class="panel" id="lodgeReport" >
+			<div class ="w3-container w3-teal">
+				<h2>Lodge Report</h2>
+			</div>
+			
+			<form method="post" action="lodgeReport.php">
+		
+					
+					Location:<br>
+					<input type="radio" name="location" value="FCI" checked><br>
+					<input type="radio" name="location" value="FOE"><br>
+					<input type="radio" name="location" value="FCM"><br>
+					<input type="radio" name="location" value="FOM"><br>
+					
+					Bicycle ID:<br>
+					<input type="number" name="bicycleID"><br>
+					
+					Parking ID:<br>
+					<input type="number" name="parkingID"><br>
+					
+					Report:<br>
+					<textarea name="report" style="width:250px;height:150px;"></textarea><br>
+					
+					<input type="submit" value="Submit">
+					<input type="reset">
+					
+				</form>
+		</div>
+		
+		<!-- unlock bike -->
+		<div class="panel" id="unlockBike" style="display:none">
+			<div class="w3-container w3-teal">
+				<h2>Unlock Bike</h2>
+			</div>
+			<div style="text-align:center;margin-top:15%;">
+			<img src="qrcode.png" alt="qrcode">
+			</div>
+		</div>
+		
+		<!-- unlock bike -->
+		<div class="panel" id="lockBike" style="display:none">
+			<div class="w3-container w3-teal">
+				<h2>Lock Bike</h2>
+			</div>
+			<div style="text-align:center;margin-top:15%;">
+			<img src="qrcode.png" alt="qrcode">
+			</div>
+		</div>
+		
+		<!-- topup -->
+		<div class="panel" id="topup" style="display:none">
+			<div class="w3-container w3-teal">
+				<h2>topup</h2>
+			</div>
+			
+			<p>Your account balance :</p>
+			<input type="button" onclick="" value="Top Up">
+		</div>
+		
+		<!-- setting -->
+		<div class="panel" id="setting" style="display:none">
+			<div class="w3-container w3-teal">
+				<h2>Setting</h2>
+			</div>
+			<form method="post" action="setting.php">
+					Address:<br>
+					<input type="text" name="address"><br>
+
+					hp_no:<br>
+					<input type="text" name="hp_no"><br>
+					
+					User name:<br>
+					<input type="text" name="username"><br>
+					
+					Password:<br>
+					<input type="password" name="password"><br>
+					
+					
+					<input type="submit" value="Submit">
+					<input type="reset">
+					
+				</form>
+			
+		</div>
+		
+		
+	</body>
+</html>

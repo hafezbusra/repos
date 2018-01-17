@@ -1,0 +1,29 @@
+.left_column { 
+    background-color: yellow;
+   overflow:hidden;
+    
+}
+.right_column { 
+    background-color: green;
+    float : right ;
+    width : 160px ;
+    overflow:hidden;
+   
+}
+
+a{
+    display:inline-block;
+    text-decoration : none;
+     padding : 5px 5px 5px 5px;
+}
+
+li{
+    display:inline-block;
+    }
+
+a:hover {
+    color : red;
+    background-color : black;
+
+}
+
